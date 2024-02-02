@@ -77,7 +77,7 @@ app.delete("/delete/:id", (req, res) => {
     })
 })
 
-app.put("/edit/:id", (req, res) => {
+app.patch("/edit/:id", (req, res) => {
     const sql = "UPDATE ticket SET `TicketID`=?, `Date`=?, `Time`=?,`TotalStake`=?,`TotalOdds`=?,`MaxBonus`=?,`PotWin`=?,`BookingCode`=?,`GameID`=?,`GameTime1`=?,`TeamName1`=?,`TeamName2`=?,`FTScore1`=?,`Odds1`=?,`GameID2`=?,`GameTime2`=?,`TeamName3`=?,`TeamName4`=?,`FTScore2`=?,`Odds2`=?";
     const id = req.params.id;
     db.query(sql, [req.body.ticket,
